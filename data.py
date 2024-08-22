@@ -29,7 +29,7 @@ order_data = [
         "name": fake.name()[:5],
         "last_name": fake.last_name()[:10],
         "address": fake.address()[:10],
-        "underground_station": "Ленинский проспект",
+        "underground_station": "Печатники",
         "phone_number": '89037876474',
         "delivery_date": '15.08.2025',
         'comment': 'здравствуйте'
