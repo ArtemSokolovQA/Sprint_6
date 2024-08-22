@@ -1,5 +1,5 @@
 import config
-from pages.questions_and_answers_page import QuestionsPage
+from pages.main_page import QuestionsPage
 from faker import Faker
 fake = Faker('ru_RU')
 questions_and_answers = [

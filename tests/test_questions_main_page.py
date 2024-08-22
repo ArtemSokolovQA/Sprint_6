@@ -3,7 +3,7 @@ import pytest
 from selenium import webdriver
 import config
 import data
-from pages.questions_and_answers_page import QuestionsPage
+from pages.main_page import QuestionsPage
 import allure
 from conftest import driver
 
@@ -16,7 +16,7 @@ class TestQuestionsMainPage:
         main_page = QuestionsPage(driver)
         main_page.open_page(config.BASE_URL)
         main_page.wait_and_find_element(question_locator)
-        main_page.scroll_to_element(question_locator)
+        main_page.scroll_to_questions_accordion()
         main_page.click_element(question_locator)
         answer_text = main_page.wait_and_find_element(answer_locator).text
         assert answer_text == expected_answer

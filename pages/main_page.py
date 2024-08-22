@@ -30,7 +30,7 @@ class QuestionsPage(BasePage):
     answer_is_possible_to_deliver_off_mkad = (By.XPATH, "//div[@id='accordion__panel-7']")
 
     order_scooter_button_header = (By.XPATH, "//button[@class='Button_Button__ra12g' and text()='Заказать']")
-    order_scooter_button_middle = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Заказать']")
+    order_scooter_button_middle = (By.XPATH, "//button[@class='Button_Button__ra12g Button_UltraBig__UU3Lp' and text()='Заказать']")
 
     def __init__(self, driver):
         self.driver = driver
@@ -123,8 +123,8 @@ class QuestionsPage(BasePage):
 
     @allure.step('Скроллить страницу до кнопки "заказать" в центре главной страницы')
     def scroll_to_middle_order_button(self):
-        self.wait_and_find_element(self.order_scooter_button_middle)
-        self.scroll_to_element(self.order_scooter_button_middle)
+        middle_order_button = self.wait_and_find_element(self.order_scooter_button_middle)
+        self.scroll_to_element(middle_order_button)
 
     @allure.step('Кликнуть по кнопке "заказать" в центре главной страницы')
     def click_middle_order_scooter_button(self):
@@ -132,6 +132,10 @@ class QuestionsPage(BasePage):
         middle_order_scooter_button.click()
 
 
+    @allure.step('Скроллить до аккорденона с вопросами')
+    def scroll_to_questions_accordion(self):
+        questions_accordion = self.wait_and_find_element(self.question_is_possible_to_extend_leasing)
+        self.scroll_to_element(questions_accordion)
 
 
 

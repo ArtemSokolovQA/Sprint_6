@@ -18,13 +18,15 @@ class BasePage:
     def open_page(self, url):
         self.driver.get(url)
 
-    def scroll_to_element(self, locator):
-        element = self.wait_and_find_element(locator)
+    def scroll_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
     def click_element(self, locator):
         self.wait_and_find_element(locator).click()
 
-
+    def set_input(self, locator, value):
+        element = self.wait_and_find_element(locator)
+        element.clear()
+        element.send_keys(value)
 
 
