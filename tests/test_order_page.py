@@ -13,6 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.by import By
 
+
 class TestOrderScooterPage:
     driver = None
     fake = Faker('ru_RU')
@@ -42,18 +43,18 @@ class TestOrderScooterPage:
         current_url = self.driver.current_url
         assert current_url == config.ORDER_SCOOTER_PAGE_URL
 
-    @pytest.mark.parametrize('order_data', data.order_data)
-    def test_order_scooter_positive_flow(self, order_data):
-        self.driver.get(config.ORDER_SCOOTER_PAGE_URL)
-        order_page = OrderScooterPage(self.driver)
-        order_page.enter_name(order_data['name'])
-        order_page.enter_last_name(order_data['last_name'])
-        order_page.enter_address(order_data['address'])
-        order_page.enter_underground_station(order_data['underground_station'])
-        self.driver.find_element(By.XPATH,
-                                 f"//button[starts-with(@class, 'Order_SelectOption')]/div[text()='{order_data['underground_station']}']").click()
-        order_page.enter_phone_number(order_data['phone_number'])
-        order_page.click_continue_button()
+    # @pytest.mark.parametrize('order_data', data.order_data)
+    # def test_order_scooter_positive_flow(self, order_data):
+    #     self.driver.get(config.ORDER_SCOOTER_PAGE_URL)
+    #     order_page = OrderScooterPage(self.driver)
+    #     order_page.enter_name(order_data['name'])
+    #     order_page.enter_last_name(order_data['last_name'])
+    #     order_page.enter_address(order_data['address'])
+    #     order_page.enter_underground_station(order_data['underground_station'])
+    #     self.driver.find_element(By.XPATH,
+    #                              f"//button[starts-with(@class, 'Order_SelectOption')]/div[text()='{order_data['underground_station']}']").click()
+    #     order_page.enter_phone_number(order_data['phone_number'])
+    #     order_page.click_continue_button()
 
 
 

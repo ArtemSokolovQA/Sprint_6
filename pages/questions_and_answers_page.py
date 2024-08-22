@@ -4,9 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
+from pages.BasePage import BasePage
 
 
-class QuestionsPage:
+class QuestionsPage(BasePage):
 
     #  локаторы кнопок вопросов в аккордеоне
     question_cost_and_payment_ways = [By.XPATH, "//div[@id='accordion__heading-0']"]
@@ -33,6 +34,7 @@ class QuestionsPage:
 
     def __init__(self, driver):
         self.driver = driver
+        super().__init__(driver)
 
     @allure.step('Кликнуть по кнопке первого вопроса в аккордеоне')
     def click_first_question_button(self):
@@ -121,10 +123,6 @@ class QuestionsPage:
     @allure.step('Кликнуть по кнопке "заказать" в центре главной страницы')
     def click_middle_order_scooter_button(self):
         self.driver.find_element(*self.order_scooter_button_middle).click()
-
-    @allure.step('Скроллить до элемента')
-    def scroll_to_element(self, element):
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def click_element(self, element):
         self.driver.find_element(*element).click()

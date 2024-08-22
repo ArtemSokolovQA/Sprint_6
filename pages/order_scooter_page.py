@@ -4,9 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
+from pages.BasePage import BasePage
 
 
-class OrderScooterPage:
+class OrderScooterPage(BasePage):
     #  Первая форма заказа самоката
     name_input = [By.XPATH, "//input[@placeholder='* Имя']"]
     last_name_input = [By.XPATH, "//input[@placeholder='* Фамилия']"]
@@ -35,6 +36,7 @@ class OrderScooterPage:
 
     def __init__(self, driver):
         self.driver = driver
+        super().__init__(driver)
 
     @allure.step(f'Ввести имя в поле ввода имени')
     def enter_name(self, name):
