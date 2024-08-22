@@ -1,6 +1,10 @@
 import pytest
+from selenium import webdriver
 
 
-# @pytest.fixture
-# def set_driver():
-#
+@pytest.fixture(scope='function')
+def driver():
+    driver = webdriver.Firefox()
+    driver.maximize_window()
+    yield driver
+    driver.quit()

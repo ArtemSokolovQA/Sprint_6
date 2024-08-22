@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
-from pages.BasePage import BasePage
+from pages.base_page import BasePage
 
 
 class OrderScooterPage(BasePage):

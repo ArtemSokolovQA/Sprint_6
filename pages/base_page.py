@@ -11,10 +11,12 @@ class BasePage:
         self.driver = driver
 
     def wait(self, element):
-        WebDriverWait(self.driver,  3).until(expected_conditions.element_to_be_clickable(element))
+        WebDriverWait(self.driver,  10).until(expected_conditions.element_to_be_clickable(element))
 
     def scroll_to_element(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
+    def click_element(self, element):
+        self.driver.find_element(*element).click()
 
 
