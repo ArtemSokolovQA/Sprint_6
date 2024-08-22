@@ -46,23 +46,15 @@ class TestOrderScooterPage:
         order_page.click_underground_station_element()
         order_page.set_phone_number(order_data['phone_number'])
         order_page.click_continue_button()
-
-        time.sleep(4)
-        assert True
-
-
-    # @pytest.mark.parametrize('order_data', data.order_data)
-    # def test_order_scooter_positive_flow(self, order_data):
-    #     self.driver.get(config.ORDER_SCOOTER_PAGE_URL)
-    #     order_page = OrderScooterPage(self.driver)
-    #     order_page.enter_name(order_data['name'])
-    #     order_page.enter_last_name(order_data['last_name'])
-    #     order_page.enter_address(order_data['address'])
-    #     order_page.enter_underground_station(order_data['underground_station'])
-    #     self.driver.find_element(By.XPATH,
-    #                              f"//button[starts-with(@class, 'Order_SelectOption')]/div[text()='{order_data['underground_station']}']").click()
-    #     order_page.enter_phone_number(order_data['phone_number'])
-    #     order_page.click_continue_button()
+        order_page.set_delivery_date(order_data['delivery_date'])
+        order_page.click_about_leasing_title()
+        order_page.click_leasing_period_dropdown()
+        order_page.click_dropdown_leasing_element()
+        order_page.click_checkbox_scooter_colour_grey()
+        order_page.click_order_button_about_leasing()
+        order_page.click_submit_order_button()
+        successful_order_title = order_page.check_successful_order_title()
+        assert successful_order_title
 
 
 

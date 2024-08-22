@@ -10,6 +10,7 @@ from pages.base_page import BasePage
 
 
 class OrderScooterPage(BasePage):
+
     #  Первая форма заказа самоката
     name_input = (By.XPATH, "//input[@placeholder='* Имя']")
     last_name_input = (By.XPATH, "//input[@placeholder='* Фамилия']")
@@ -36,7 +37,7 @@ class OrderScooterPage(BasePage):
     order_button = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
     submit_order_button = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Да']")
     successful_order_modal = (By.XPATH, "//div[@class='Order_ModalHeader__3FDaJ']")
-
+    about_leasing_title = (By.XPATH, "//div[text()='Про аренду']")
 
     def __init__(self, driver):
         self.driver = driver
@@ -74,6 +75,45 @@ class OrderScooterPage(BasePage):
     def click_underground_station_element(self):
         self.click_element(self.underground_station_element)
 
+
+    @allure.step('Ввести дату в поле ввода даты')
+    def set_delivery_date(self, date):
+        self.set_input(self.date_input, date)
+
+    @allure.step('Кликнуть по дропдауну срока аренды самоката')
+    def click_leasing_period_dropdown(self):
+        leasing_period_dropdown = self.leasing_period_dropdown
+        self.click_element(leasing_period_dropdown)
+
+    @allure.step('Кликнуть по заголовку "Про аренду"')
+    def click_about_leasing_title(self):
+        about_leasing_title = self.about_leasing_title
+        self.click_element(about_leasing_title)
+
+    @allure.step('Кликнуть по элементу в дропдауне срока аренды')
+    def click_dropdown_leasing_element(self):
+        dropdown_leasing_element = self.dropdown_2days_leasing
+        self.click_element(dropdown_leasing_element)
+
+
+    @allure.step('Кликнуть по чек-боксу выбора цвета "серая безысходность"')
+    def click_checkbox_scooter_colour_grey(self):
+        checkbox_scooter_colour_grey = self.grey_hopelessness_checkbox
+        self.click_element(checkbox_scooter_colour_grey)
+
+    @allure.step('Нажать на кнопку "Заказать" формы "Про аренду"')
+    def click_order_button_about_leasing(self):
+        order_button_about_leasing = self.order_button
+        self.click_element(order_button_about_leasing)
+
+    @allure.step('Нажать на кнопку "Заказать" формы "Про аренду"')
+    def click_submit_order_button(self):
+        submit_order_button= self.submit_order_button
+        self.click_element(submit_order_button)
+
+    def check_successful_order_title(self):
+        successful_order_title = self.wait_and_find_element(self.successful_order_modal)
+        return successful_order_title
 
 
 
