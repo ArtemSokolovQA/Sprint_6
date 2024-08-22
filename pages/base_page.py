@@ -19,11 +19,11 @@ class BasePage:
         self.driver.get(url)
 
     def scroll_to_element(self, locator):
-        self.wait_and_find_element(locator)
-        self.driver.execute_script("arguments[0].scrollIntoView();", locator)
+        element = self.wait_and_find_element(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    # def click_element(self, locator):
-    #     self.wait_and_find_element(locator).click()
+    def click_element(self, locator):
+        self.wait_and_find_element(locator).click()
 
 
 

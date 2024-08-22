@@ -10,27 +10,27 @@ from pages.base_page import BasePage
 class QuestionsPage(BasePage):
 
     #  локаторы кнопок вопросов в аккордеоне
-    question_cost_and_payment_ways = [By.XPATH, "//div[@id='accordion__heading-0']"]
-    question_multiple_scooters = [By.XPATH, "//div[@id='accordion__heading-1']"]
-    question_leasing_time = [By.XPATH, "//div[@id='accordion__heading-2']"]
-    question_is_possible_to_order_today = [By.XPATH, "//div[@id='accordion__heading-3']"]
-    question_is_possible_to_extend_leasing = [By.XPATH, "//div[@id='accordion__heading-4']"]
-    question_charger = [By.XPATH, "//div[@id='accordion__heading-5']"]
-    question_is_possible_to_cancel_order = [By.XPATH, "//div[@id='accordion__heading-6']"]
-    question_is_possible_to_deliver_off_mkad = [By.XPATH, "//div[@id='accordion__heading-7']"]
+    question_cost_and_payment_ways = (By.XPATH, "//div[@id='accordion__heading-0']")
+    question_multiple_scooters = (By.XPATH, "//div[@id='accordion__heading-1']")
+    question_leasing_time = (By.XPATH, "//div[@id='accordion__heading-2']")
+    question_is_possible_to_order_today = (By.XPATH, "//div[@id='accordion__heading-3']")
+    question_is_possible_to_extend_leasing = (By.XPATH, "//div[@id='accordion__heading-4']")
+    question_charger = (By.XPATH, "//div[@id='accordion__heading-5']")
+    question_is_possible_to_cancel_order = (By.XPATH, "//div[@id='accordion__heading-6']")
+    question_is_possible_to_deliver_off_mkad = (By.XPATH, "//div[@id='accordion__heading-7']")
 
     #  локаторы ответов на вопросы аккордеона
-    answer_cost_and_payment_ways = [By.XPATH, "//div[@id='accordion__panel-0']"]
-    answer_multiple_scooters = [By.XPATH, "//div[@id='accordion__panel-1']"]
-    answer_leasing_time = [By.XPATH, "//div[@id='accordion__panel-2']"]
-    answer_is_possible_to_deliver_today = [By.XPATH, "//div[@id='accordion__panel-3']"]
-    answer_is_possible_to_extend_leasing = [By.XPATH, "//div[@id='accordion__panel-4']"]
-    answer_charger = [By.XPATH, "//div[@id='accordion__panel-5']"]
-    answer_is_possible_to_cancel_order = [By.XPATH, "//div[@id='accordion__panel-6']"]
-    answer_is_possible_to_deliver_off_mkad = [By.XPATH, "//div[@id='accordion__panel-7']"]
+    answer_cost_and_payment_ways = (By.XPATH, "//div[@id='accordion__panel-0']")
+    answer_multiple_scooters = (By.XPATH, "//div[@id='accordion__panel-1']")
+    answer_leasing_time = (By.XPATH, "//div[@id='accordion__panel-2']")
+    answer_is_possible_to_deliver_today = (By.XPATH, "//div[@id='accordion__panel-3']")
+    answer_is_possible_to_extend_leasing = (By.XPATH, "//div[@id='accordion__panel-4']")
+    answer_charger = (By.XPATH, "//div[@id='accordion__panel-5']")
+    answer_is_possible_to_cancel_order = (By.XPATH, "//div[@id='accordion__panel-6']")
+    answer_is_possible_to_deliver_off_mkad = (By.XPATH, "//div[@id='accordion__panel-7']")
 
-    order_scooter_button_header = [By.XPATH, "//button[@class='Button_Button__ra12g' and text()='Заказать']"]
-    order_scooter_button_middle = [By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Заказать']"]
+    order_scooter_button_header = (By.XPATH, "//button[@class='Button_Button__ra12g' and text()='Заказать']")
+    order_scooter_button_middle = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Заказать']")
 
     def __init__(self, driver):
         self.driver = driver
