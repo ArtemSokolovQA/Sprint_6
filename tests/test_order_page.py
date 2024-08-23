@@ -32,7 +32,7 @@ class TestOrderScooterPage:
         main_page.open_page(config.BASE_URL)
         main_page.scroll_to_middle_order_button()
         main_page.click_middle_order_scooter_button()
-        current_url = driver.current_url
+        current_url = main_page.get_current_url()
         assert current_url == config.ORDER_SCOOTER_PAGE_URL
 
     @pytest.mark.parametrize('order_data', data.order_data)
