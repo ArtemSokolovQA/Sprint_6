@@ -111,6 +111,7 @@ class OrderScooterPage(BasePage):
         submit_order_button= self.submit_order_button
         self.click_element(submit_order_button)
 
+    @allure.step('Проверить наличие заголовка об успешном заказе')
     def check_successful_order_title(self):
         successful_order_title = self.wait_and_find_element(self.successful_order_modal)
         return successful_order_title
