@@ -1,7 +1,9 @@
 import config
 from pages.main_page import QuestionsPage
 from faker import Faker
+
 fake = Faker('ru_RU')
+
 questions_and_answers = [
     (QuestionsPage.question_cost_and_payment_ways, QuestionsPage.answer_cost_and_payment_ways, config.FIRST_QUESTION_ANSWER),
     (QuestionsPage.question_multiple_scooters, QuestionsPage.answer_multiple_scooters, config.SECOND_QUESTION_ANSWER),

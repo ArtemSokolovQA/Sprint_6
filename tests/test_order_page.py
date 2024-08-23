@@ -1,17 +1,10 @@
-import time
-from selenium.webdriver.support.ui import Select
-import faker.providers.date_time
 import pytest
-from selenium import webdriver
 import config
 import data
 from pages.main_page import QuestionsPage
 from pages.order_scooter_page import OrderScooterPage
 import allure
 from faker import Faker
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.common.by import By
 from conftest import driver
 
 
